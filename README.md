@@ -1,4 +1,4 @@
-## Hi there 👋
+Halløj!!👋
 
 Denne kode hjælper med at afgøre, om et transportbånd kan bære en given last. 
 Brugeren indtaster antal motorer og den samlede vægt af pakkerne, og programmet beregner derefter vægten pr. motor. 
