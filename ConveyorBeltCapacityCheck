@@ -1,0 +1,34 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Opretter konstant.
+        //Hver motor kan bære 5.6 kg, så vi gemmer denne værdi
+        const double maxPerMotor = 5.6;
+
+        //Udskriver tekst i konsollen
+        //Venter på at brugeren skriver noget og trykker enter, konverterer til heltal og gemmer resultat i variablen "motors"
+        Console.WriteLine("How many motors are carrying the packages?");
+        int motors = int.Parse(Console.ReadLine());
+
+        //Udskriver tekst i konsollen
+        //Venter på at brugeren skriver noget og trykker enter, konverterer til decimal og gemmer resultat i variablen "totalWeight"
+        Console.WriteLine("How many kg of packages do we expect?");
+        double totalWeight = double.Parse(Console.ReadLine());
+
+        //beregner hvor meget vægt hver motor skal bære og gemmer i variablen "perMotor"
+        double perMotor = totalWeight / motors;
+
+        // Tjekker om belastning pr motor er mindre eller lig med 5.6 kg
+        if (perMotor <= maxPerMotor)
+        {
+            Console.WriteLine("Yes! The conveyor belt can carry the packages.");
+        }
+        else
+        {
+            Console.WriteLine("No. The conveyor belt cannot carry the packages.");
+        }
+    }
+}
