@@ -1,5 +1,6 @@
 ## Hi there 👋
 
+Dette er min mappe til industriel programmering, hvor jeg leger rundt med C# :)
 <!--
 **amaliesvarre/amaliesvarre** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
