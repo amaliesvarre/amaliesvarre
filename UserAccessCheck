@@ -1,0 +1,60 @@
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Input fra bruger (login)
+        Console.Write("Indtast dit brugernavn: ");
+        string username = Console.ReadLine();
+
+        Console.Write("Indtast dit password: ");
+        string password = Console.ReadLine();
+
+        Console.Write("Indtast dit bruger-ID (tal): ");
+        uint userId = Convert.ToUInt32(Console.ReadLine());
+
+        // Boolean (krav til login)
+        bool userIsAdmin = userId > 65536;
+        bool usernameValid = username.Length >= 3;
+        bool passwordContainsSpecial =
+            password.Contains('$') || password.Contains('!') || password.Contains('@');
+
+        int minLength = userIsAdmin ? 20 : 8;
+        bool passwordValid = passwordContainsSpecial && password.Length >= minLength;
+
+        // Output ved fuldført login + output ved fejl login
+        if (usernameValid && passwordValid)
+        {
+            Console.WriteLine("\n✅ Login gennemført! Brugernavn og password er gyldige.");
+            if (userIsAdmin)
+            {
+                Console.WriteLine("Du er logget ind som administrator.");
+            }
+            else
+            {
+                Console.WriteLine("Du er logget ind som almindelig bruger.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("\n Login fejlede. Problemer fundet:");
+
+            if (!usernameValid)
+            {
+                Console.WriteLine("- Brugernavnet skal være på mindst 3 tegn.");
+            }
+
+            if (!passwordContainsSpecial)
+            {
+                Console.WriteLine("- Password skal indeholde mindst ét af tegnene: $, | eller @.");
+            }
+
+            if (password.Length < minLength)
+            {
+                Console.WriteLine(
+                    $"- Password skal være mindst {minLength} tegn langt (afhængigt af brugerrolle).");
+            }
+        }
+    }
+}
