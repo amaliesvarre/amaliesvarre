@@ -1,4 +1,5 @@
 ## Hi there 👋
+ChatGPT is has been usd for debugging
 
 <!--
 **amaliesvarre/amaliesvarre** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
